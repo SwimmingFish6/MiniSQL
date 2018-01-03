@@ -1,0 +1,46 @@
+#pragma once
+#include <vector>
+#include <list>
+#include "DataStructure.h"
+#include "RecordManager.h"
+#include "IndexManager.h"
+#include "CatalogManager.h"
+
+#define SUCCESS     (0)
+#define TABLE_NAME_EXIST (1)
+#define TABLE_NAME_NOT_EXIST (2)
+#define FIELD_NAME_TOO_LONG (3)
+#define INDEX_NAME_EXIST (4)
+#define FIELD_NAME_NOT_EXIST (5)
+#define FIELD_INEDX_EXIST (6)
+#define INDEX_NAME_NOT_EXIST (7)
+#define ATTRIBUTE_COUNT_ERROR (8)
+#define ATTRIBUTE_TYPE_ERROR (9)
+#define UNIQUE_ERROR (10)
+#define SELECT_NOT_FIND (11)
+#define VALUE_TYPE_ERROR (12)
+#define DELETE_NOT_EXIST (13)
+
+class API
+{
+public:
+    API(RecordManager* record, IndexManager* index, CatalogManager* catalog)
+        : Record(record), Index(index), Catalog(catalog)
+    { }
+    ~API() { }
+    int CreateTable(vector<name>& nameList);
+    int DropTable(vector<name>& nameList);
+    int CreateIndex(vector<name>& nameList);
+    int DropIndex(vector<name>& nameList);
+    int Select(vector<name>& nameList, vector<Condition>& conditionList, vector<record>& selectList);
+    int Insert(vector<name>& nameList);
+    int Delete(vector<name>& nameList, vector<Condition>& conditionList);
+    void CatalogDone();
+private:
+    RecordManager* Record;
+    IndexManager* Index;
+    CatalogManager* Catalog;
+    list<string> TableSet;
+    int checkValues(string s, int type);
+    string curTableName;
+};
