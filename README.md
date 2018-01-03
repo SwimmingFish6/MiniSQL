@@ -1,2 +1,2 @@
 # MiniSQL
-A small-scale database supporting basic SQL operation like INSERT, DELETE, SELECT, UPDATE, etc for ZJU database course
+A small-scale database supporting concurrent SQL operations including Update, Insert, Select, Create, Delete, etc for ZJU database course
