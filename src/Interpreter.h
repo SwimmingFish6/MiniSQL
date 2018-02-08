@@ -9,7 +9,6 @@
 #include "CatalogManager.h"
 using namespace std;
 
-#define NOTDIGIT (0)
 
 #define CREATE_TABLE     (1)
 #define CREATE_INDEX     (2)

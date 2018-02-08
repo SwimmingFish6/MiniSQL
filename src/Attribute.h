@@ -1,5 +1,6 @@
 #pragma once
 #include <iostream>
+#include <string.h>
 #define TYPE_INT (256)
 #define TYPE_FLOAT (257)
 #define TYPE_ERROR (0)

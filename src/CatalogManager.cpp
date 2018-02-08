@@ -40,7 +40,7 @@ int CatalogManager::getIsUnique(const char* tableName, const char *attributeName
     address = block.Data;
     addressFind = findAttribute(address, attributeName);
     if (NULL == addressFind)
-        return UNIQUE_ERROR;
+        return -1;
     addressFind += 32 + sizeof(int);
     memcpy(&isUnique, addressFind, sizeof(int));
     return isUnique;

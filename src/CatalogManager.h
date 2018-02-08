@@ -7,9 +7,10 @@
 #include "Attribute.h"
 #include "BufferManager.h"
 #include "IndexInfo.h"
+#include <string.h>
+#include <stdlib.h>
 using namespace std;
 
-#define UNIQUE_ERROR (-1);
 
 class CatalogManager {
 private:

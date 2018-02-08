@@ -3,6 +3,7 @@
 #include <fstream>
 #include <string>
 #include <ctime>
+#include <limits.h>
 using namespace std;
 
 class BufferBlock
